@@ -1,13 +1,12 @@
 <x-layout>
 
-    <div class="container-fluid text-center bg-body-tertiary">
-        <div class="row vh-100 justify-content-center align-items-center">
+    <div class="container-fluid ">
+        <div class="row  justify-content-center align-items-center text-center">
             <div class="col-12">
-                <h1 class="display-4">Presto.it</h1>
-                <a href="{{ route('article.create') }}" class="btn btn-dark">Crea un Articolo</a>
+                <h1 class="display-4 pt-4">Tutti gli Articoli</h1>
             </div>
         </div>
-        <div class="row height-custom justify-content-center align-items-center py-5">
+        <div class="row height-custom justify-content-center align-items-center py-4">
             @forelse ($articles as $article)
                 <div class="col-12 col-md-4">
                     <x-card :article="$article" />
@@ -18,6 +17,12 @@
             </div>
                 
             @endforelse
+
+            <div class="d-flex justify-content-center">
+                <div>
+                    {{ $articles->links() }}
+                </div>
+            </div>
 
         </div>
     </div>
