@@ -1,3 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+   font-family: "Playfair Display", system-ui;
+   font-optical-sizing: auto;
+   font-style: bold;
+}
+
+* {
+   font-family: "Open Sans", system-ui;
+   font-optical-sizing: auto;
+   font-style: normal;
+}
+
+
 .height-custom {
    min-height: 60vh;
+}
+
+.img-custom {
+   width: 15vh;
+}
+
+@media screen and (max-width: 576px) {
+   .img-custom {
+      width: 10vh;
+   }
+
+   ;
+}
+
+
+.nav-custom {
+   background: radial-gradient(circle, rgba(255, 100, 0, 0.6741290266106443) 0%, rgba(0, 0, 0, 1) 80%);
+   transition: 0.4s;
+   z-index: 1;
+   width: 60%;
+   min-height: 70px;
+   position: fixed;
+   top: 40px;
+   left: 50%;
+   transform: translateX(-50%);
+   box-shadow: 2px 0px 15px;
+}
+
+.nav-custom-other {
+   background: radial-gradient(circle, rgba(255, 100, 0, 0.6741290266106443) 0%, rgba(0, 0, 0, 1) 80%);
+}
+
+@media screen and (max-width: 576px) {
+   .nav-custom {
+      top: 0 !important;
+      width: 100% !important;
+   }
+
+}
+
+.btn-custom {
+   background-image: linear-gradient(to right, #c21500 0%, #ffc500 51%, #c21500 100%);
+   margin: 10px;
+   padding: 10px 25px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;
+   box-shadow: 0 0 20px #eee;
+   border-radius: 10px;
+   display: block;
+}
+
+.btn-custom:hover {
+   background-position: right center;
+   color: #fff;
+   text-decoration: none;
+}
+
+.bg-custom {
+   background-image: url("/public/media/background.png");
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+.btn-grad {
+   background-image: linear-gradient(to right, #870000 0%, #190A05 51%, #870000 100%);
+   margin: 10px;
+   padding: 10px 25px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;
+   box-shadow: 0 0 20px #eee;
+   border-radius: 10px;
+   display: block;
+}
+
+.btn-grad:hover {
+   background-position: right center;
+   /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+}
+
+.box-shadow {
+   box-shadow: 0 0 5px #c21500, 0 0 20px #ffc500, 0 0 30px #c21500;
+   border-radius: 100px;
+   background-color: whitesmoke;
+}
+
+@media screen and (max-width: 576px) {
+   .box-shadow {
+      border-radius: 10px;
+   }
+}
+
+.page-link {
+   background-color: #c21500;
+   color: #ffffff;
+}
+
+.page-link:hover {
+   color: black;
+}
+
+.page-link.active,
+.active>.page-link {
+   background-color: #c21500;
+   border-color: #c21500;
+}
+
+.pagination {
+   color: #c21500 !important;
+}
+
+.bg-cards {
+   background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
 }

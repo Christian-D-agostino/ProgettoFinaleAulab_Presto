@@ -5,18 +5,18 @@
                 <use xlink:href="#bootstrap" />
             </svg>
         </a>
-        <span class="mb-3 mb-md-0 text-muted">&copy; 2022 Company, Inc</span>
+        <span class="mb-3 mb-md-0 text-muted">&copy; 2024 Company, Inc</span>
     </div>
 
-    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-        <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24">
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex me-5">
+        <li class="ms-3"><a class="text-muted" href="#"><i class="bi bi-twitter-x fs-4"></i>
                     <use xlink:href="#twitter" />
-                </svg></a></li>
-        <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24">
+                </a></li>
+        <li class="ms-3"><a class="text-muted" href="#"><i class="bi bi-instagram fs-4"></i>
                     <use xlink:href="#instagram" />
-                </svg></a></li>
-        <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24">
+                </a></li>
+        <li class="ms-3"><a class="text-muted" href="#"><i class="bi bi-facebook fs-4"></i>
                     <use xlink:href="#facebook" />
-                </svg></a></li>
+                </a></li>
     </ul>
 </footer>
