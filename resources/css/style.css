@@ -35,7 +35,7 @@ h5 {
 
 
 .nav-custom {
-   background: radial-gradient(circle, rgba(255, 100, 0, 0.6741290266106443) 0%, rgba(0, 0, 0, 1) 80%);
+   background-color: black !important;
    transition: 0.4s;
    z-index: 1;
    width: 60%;
@@ -60,7 +60,7 @@ h5 {
 }
 
 .btn-custom {
-   background-image: linear-gradient(to right, #c21500 0%, #ffc500 51%, #c21500 100%);
+   background-image: linear-gradient(to right, #c21500 0%, #ff0000 51%, #c21500 100%);
    margin: 10px;
    padding: 10px 25px;
    text-align: center;
@@ -85,6 +85,22 @@ h5 {
    background-size: cover;
 }
 
+@media screen and (max-width: 576px) {
+   .bg-custom {
+      background-size: 220% 100%;
+      background-image: url("/public/media/background.png");
+      background-repeat: no-repeat;
+      background-position: 50%;
+   }
+}
+
+@media screen and (min-width: 577px) and (max-width: 840px) {
+   .bg-custom {
+      background-position: center;
+      background-size: 220% 100%;
+   }
+}
+
 .btn-grad {
    background-image: linear-gradient(to right, #870000 0%, #190A05 51%, #870000 100%);
    margin: 10px;
@@ -107,8 +123,7 @@ h5 {
 }
 
 .box-shadow {
-   box-shadow: 0 0 5px #c21500, 0 0 20px #ffc500, 0 0 30px #c21500;
-   border-radius: 100px;
+   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
    background-color: whitesmoke;
 }
 
