@@ -5,6 +5,7 @@ namespace App\Livewire;
 use App\Models\Article;
 use Livewire\Component;
 use Livewire\Attributes\Validate;
+use Illuminate\Support\Facades\Auth;
 
 class CreateArticleForm extends Component
 {
@@ -38,7 +39,7 @@ class CreateArticleForm extends Component
             'description' => $this->description,
             'price' => $this->price,
             'category_id' => $this->category,
-            'user_id' => auth()->user->id
+            'user_id' => Auth::user()->id
         ]);
         $this->reset();
         session()->flash('created', 'Articolo creato con successo');

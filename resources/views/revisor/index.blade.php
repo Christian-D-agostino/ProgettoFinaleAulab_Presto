@@ -4,6 +4,7 @@
 @endif
     <div class="container-fluid pt-5">
         <div class="row mt-5">
+            @dump($articles)
             <div class="col-3">
                 <div class="rounded shadow bg-body-secondary">
                     <h1 class="display-5 mt-5 pb-2 text-center">Revisor dashboard</h1>
@@ -58,6 +59,15 @@
                             @method('PATCH')
                             <button class="btn btn-danger" type="submit">rifiuta</button>
                         </form>
+
+
+                        @if (session('rejected' || session('accepted')))
+                        <form action="{{ route('revisor.undo', $article_to_check) }}" method="POST">
+                            @csrf
+                            @method('PATCH')
+                            <button class="btn btn-danger" type="submit">Annulla</button>
+                        </form>
+                        @endif
                     </div>
                 </div>
             </div>

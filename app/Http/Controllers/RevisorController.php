@@ -13,8 +13,9 @@ use Illuminate\Support\Facades\Artisan;
 class RevisorController extends Controller
 {
     public function index() {
+        $articles = Article::all();
         $article_to_check = Article::where('is_accepted', null)->first();
-        return view('revisor.index', compact('article_to_check'));
+        return view('revisor.index', compact('article_to_check', 'articles'));
     }
 
     public function accept(Article $article){
@@ -24,7 +25,7 @@ class RevisorController extends Controller
 
     public function reject(Article $article){
         $article->setAccepted(false);
-        return redirect(route('revisor.index'))->with('notSuccess', "Articolo $article->title rifiutato");
+        return redirect(route('revisor.index', compact('article')))->with('notSuccess', "Articolo $article->title rifiutato");
     } 
 
     public function undo(Article $article){
