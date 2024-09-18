@@ -17,9 +17,9 @@
                         <h3 class="text-center">Nessun Articolo Caricato</h3>
                     </div>
                 @endforelse
-            @elseif (Auth::user()->is_revisor == false && $articles->is_accepted == true)
+         {{--    @elseif (Auth::user()->is_revisor == false && $articles->is_accepted == true) --}}
                         
-                    @forelse ($articles as $article)
+                  {{--   @forelse ($articles as $article)
 
                         <div class="col-12 col-md-3">
                             <x-card :article="$article" />
@@ -28,7 +28,7 @@
                         <div class="col-12">
                             <h3 class="text-center">Nessun Articolo Caricato</h3>
                         </div>
-                    @endforelse
+                    @endforelse --}}
                
            
             @endif

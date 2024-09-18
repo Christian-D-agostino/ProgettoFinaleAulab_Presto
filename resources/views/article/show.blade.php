@@ -1,13 +1,13 @@
 <x-layout>
     <div class="container">
-        <div class="row height-custom justify-content-center align-items-center text-center">
+        <div class="row pt-5 mt-5 mb-3 justify-content-center align-items-center text-center">
             <div class="col-12">
                 <h1 class="display-4">Dettaglio dell'Articolo : {{ $article->title }}</h1>
             </div>
         </div>
-        <div class="row height-custom py-5 justify-content-center">
-            <div class="col-12 col-md-6 mb-3">
-                <div id="carouselExampleDark" class="carousel carousel-dark slide">
+        <div class="row height-custom py-0 justify-content-center ">
+            <div class="col-12 col-md-6 mb-3 d-flex flex-column justify-content-center align-items-center">
+                <div id="carouselExampleDark" class="carousel carousel-dark slide w-75">
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
                             aria-current="true" aria-label="Slide 1"></button>
@@ -41,7 +41,7 @@
             </div>
 
             
-            <div class="col-12 col-md-6 mb-3 height-custom text-center">
+            <div class="col-12 col-md-6 mb-3  text-center">
                 <h2 class="display-5"><span class="fw-bold">{{ $article->title }}</span></h2>
                 <div class="d-flex justify-content-center h-75 flex-column">
                     <h4 class="fw-bold">Prezzo: {{ $article->price }}€</h4>
