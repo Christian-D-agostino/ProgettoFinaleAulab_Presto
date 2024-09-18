@@ -14,8 +14,13 @@ h5 {
    font-family: "Open Sans", system-ui;
    font-optical-sizing: auto;
    font-style: normal;
+   
 }
 
+ /* cursore */
+*,.btn,a,div { 
+   cursor: url('/public/media/newantonio.png'), auto;
+ };
 
 .height-custom {
    min-height: 60vh;
@@ -152,6 +157,3 @@ h5 {
    color: #c21500 !important;
 }
 
-.bg-cards {
-   background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
-}
