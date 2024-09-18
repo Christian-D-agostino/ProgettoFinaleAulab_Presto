@@ -2,12 +2,21 @@
 
     <div class="container-fluid text-center">
         <div class="row vh-100 justify-content-center align-items-center bg-custom">
+            @if (session('error'))
+                <div class="alert alert-success">
+                    {{ session('error') }}
+                </div>
+            @endif
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
             <div class="col-12 d-flex justify-content-center flex-column align-items-center">
                 <h1 class="display-4 font-title">Presto.it</h1>
                 <a href="{{ route('article.create') }}" class="btn btn-custom">Crea un Articolo</a>
             </div>
         </div>
-
         <section class="container-fluid bg-cards">
             <div class="row justify-content-evenly m-5 box-shadow">
                 <div class="col-12 col-md-3 text-center py-4 ">

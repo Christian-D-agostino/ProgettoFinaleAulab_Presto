@@ -38,7 +38,7 @@ class CreateArticleForm extends Component
             'description' => $this->description,
             'price' => $this->price,
             'category_id' => $this->category,
-            'user_id' => auth()->user()->id
+            'user_id' => auth()->user->id
         ]);
         $this->reset();
         session()->flash('created', 'Articolo creato con successo');
