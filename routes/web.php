@@ -23,3 +23,6 @@ Route::patch('/undo/{article}', [RevisorController::class, 'undo'])->name('revis
 // Rotte della mail
 Route::get('/revisor/request', [RevisorController::class, 'becomeRevisor'])->name('become.revisor')->middleware('auth');
 Route::get('/make/revisor/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
+
+//rotta button search
+Route::get('/search/article', [PublicController::class, 'searchArticles'])->name('article.search');
