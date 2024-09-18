@@ -4,7 +4,6 @@
     </div>
     <div class="card-body d-flex flex-column justify-content-center align-items-center">
       <h5 class="card-title text-truncate">Titolo: {{$article->title}}</h5>
-      <p>Stato: {{$article->is_accepted ? 'Approvato' : 'In Attesa/non approvato'}} </p>
       <p class="card-text text-truncate">Descrizione: {{$article->description}}</p>
       <p class="card-text text-truncate">Prezzo: {{$article->price}}€</p>
       <p class="card-text text-truncate">Categoria: {{$article->category->name}}</p>

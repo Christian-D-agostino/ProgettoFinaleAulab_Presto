@@ -13,10 +13,16 @@ use Illuminate\Support\Facades\Artisan;
 class RevisorController extends Controller
 {
     public function index() {
-        $articles = Article::all();
         $article_to_check = Article::where('is_accepted', null)->first();
-        return view('revisor.index', compact('article_to_check', 'articles'));
+        $lastArticle= Article::where('is_accepted', true)->orwhere('is_accepted', false)->take(1)->latest('id')->get();
+        return view('revisor.index', compact('article_to_check', 'lastArticle'));
     }
+
+    public function undo(Article $article){
+        $article->setAccepted(null);
+        return redirect(route('revisor.index'))->with('success', "Articolo $article->title resettato");
+    } 
+
 
     public function accept(Article $article){
         $article->setAccepted(true);
@@ -27,11 +33,6 @@ class RevisorController extends Controller
         $article->setAccepted(false);
         return redirect(route('revisor.index', compact('article')))->with('notSuccess', "Articolo $article->title rifiutato");
     } 
-
-    public function undo(Article $article){
-        $article->setAccepted(null);
-        return redirect(route('revisor.index'))->with('success', "Articolo $article->title annullato");
-    }
 
     public function becomeRevisor(){
         Mail::to('admin@presto.it')->send(new BecomeRevisor(Auth::user()));

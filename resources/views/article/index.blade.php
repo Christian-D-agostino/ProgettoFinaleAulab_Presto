@@ -7,7 +7,7 @@
             </div>
         </div>
         <div class="row height-custom justify-content-center align-items-center py-4 gap-3">
-            @if (Auth::user()->is_revisor == true)
+           
                 @forelse ($articles as $article)
                     <div class="col-12 col-md-3">
                         <x-card :article="$article" />
@@ -17,21 +17,10 @@
                         <h3 class="text-center">Nessun Articolo Caricato</h3>
                     </div>
                 @endforelse
-         {{--    @elseif (Auth::user()->is_revisor == false && $articles->is_accepted == true) --}}
-                        
-                  {{--   @forelse ($articles as $article)
-
-                        <div class="col-12 col-md-3">
-                            <x-card :article="$article" />
-                        </div>
-                    @empty
-                        <div class="col-12">
-                            <h3 class="text-center">Nessun Articolo Caricato</h3>
-                        </div>
-                    @endforelse --}}
+        
                
            
-            @endif
+           
             <div class="d-flex justify-content-center">
                 <div>
                     {{ $articles->links() }}
