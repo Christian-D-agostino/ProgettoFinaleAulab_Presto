@@ -5,20 +5,20 @@
                 <use xlink:href="#bootstrap" />
             </svg>
         </a>
-        <span class="mb-3 mb-md-0 text-muted">&copy; 2024 Company, Inc</span>
+        <span class="mb-3 mb-md-0 text-white">&copy; 2024 Company, Inc</span>
     </div>
 
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex me-5">
         <li>
             <a href="{{ route('become.revisor')}}">Vuoi diventare revisore?</a>
         </li>
-        <li class="ms-3"><a class="text-muted" href="#"><i class="bi bi-twitter-x fs-4"></i>
+        <li class="ms-3"><a class="text-white" href="#"><i class="bi bi-twitter-x fs-4"></i>
                     <use xlink:href="#twitter" />
                 </a></li>
-        <li class="ms-3"><a class="text-muted" href="#"><i class="bi bi-instagram fs-4"></i>
+        <li class="ms-3"><a class="text-white" href="#"><i class="bi bi-instagram fs-4"></i>
                     <use xlink:href="#instagram" />
                 </a></li>
-        <li class="ms-3"><a class="text-muted" href="#"><i class="bi bi-facebook fs-4"></i>
+        <li class="ms-3"><a class="text-white" href="#"><i class="bi bi-facebook fs-4"></i>
                     <use xlink:href="#facebook" />
                 </a></li>
     </ul>

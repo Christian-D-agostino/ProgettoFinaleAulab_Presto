@@ -19,8 +19,8 @@
         </div>
         </header>
         <section class="container-fluid bg-cards">
-            <div class="row justify-content-evenly m-5 box-shadow">
-                <div class="col-12 col-md-3 text-center py-4 border-2 border-end ">
+            <div class="row row-numbers justify-content-evenly m-5 box-shadow text-white">
+                <div class="col-12 col-md-3 text-center py-4">
                     <i class="bi bi-bag-check text-success fs-1 "></i>
                     <h3>Articoli venduti</h3>
                     <span id="incraseNumberOne" class="mt-4">0</span>
@@ -32,7 +32,7 @@
                     <span id="incraseNumberTwo" class="mt-4"> 0</span>
                 </div>
 
-                <div class="col-12 col-md-3 text-center py-4  border-2 border-start">
+                <div class="col-12 col-md-3 text-center py-4 ">
                     <i class="bi bi-eye text-danger fs-1 "></i>
                     <h3>Visite</h3>
                     <span id="incraseNumberThree" class="mt-4"> 0</span>
