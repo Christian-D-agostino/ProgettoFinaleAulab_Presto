@@ -53,7 +53,11 @@ h5 {
 }
 
 .nav-custom-other {
-   background: radial-gradient(circle, rgba(255, 100, 0, 0.6741290266106443) 0%, rgba(0, 0, 0, 1) 80%);
+   background-color: black !important;
+}
+
+.dropdown-menu {
+   background-color: black !important;
 }
 
 @media screen and (max-width: 576px) {
@@ -63,6 +67,13 @@ h5 {
    }
 
 }
+
+.truncate {
+   width: 250px;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+ }
 
 .btn-custom {
    background-image: linear-gradient(to right, #c21500 0%, #ff0000 51%, #c21500 100%);
@@ -155,5 +166,27 @@ h5 {
 
 .pagination {
    color: #c21500 !important;
+}
+
+footer {
+   min-height: 60px;
+}
+
+.rowmodal {
+   margin: -30px;
+}
+
+
+.carousel-inner {
+   max-height: 400px;
+}
+
+.btn-close {
+   position: absolute;
+   z-index: 999;
+   top: 30px;
+   right: 20px;
+   background-image: url('/public/media/newantonio.png');
+   opacity: 100% !important;
 }
 
