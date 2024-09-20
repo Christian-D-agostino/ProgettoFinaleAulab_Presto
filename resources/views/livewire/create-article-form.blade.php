@@ -30,7 +30,7 @@
     <div class="mb-3">
         <select class="form-control @error('category') is-invalid @enderror" name="category" id="category"
             wire:model.live="category">
-            <option label >Seleziona una Categoria</option>
+            <option label value="">Seleziona una Categoria</option>
             @foreach ($categories as $category)
                 <option value="{{ $category->id }}">{{ $category->name }}</option>
             @endforeach
