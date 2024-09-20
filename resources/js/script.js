@@ -21,7 +21,7 @@ window.addEventListener("scroll", () => {
 
             navbar.style.top = "0"
         }else{
-            navbar.style.width= "60%"
+            navbar.style.width= "70%"
 
             navbar.style.top = "40px"
         }

@@ -7,7 +7,7 @@
     <title>Presto.it</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-cards">
+<body class="bg-layout">
     <x-navbar />
 
     <div class="min-vh-100">
