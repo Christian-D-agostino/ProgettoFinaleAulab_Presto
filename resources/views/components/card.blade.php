@@ -2,7 +2,10 @@
     <div class="card-header">
         Articolo N.{{ $article->id }}
     </div>
+
     <div class="card-body d-flex flex-column justify-content-center align-items-center">
+        <img src="{{ $article->images->isNotEmpty() ? Storage::url($article->images->first()->path) : 'https://picsum.photos/200' }}"
+            class="card-img-top" alt="">
         <h5 class="card-text truncate">Titolo: {{ $article->title }}</h5>
         <p class="card-text truncate">Descrizione: {{ $article->description }}</p>
         <p class="card-text">Prezzo: {{ $article->price }}€</p>
@@ -29,41 +32,58 @@
             <div class="modal-body">
                 <div class="row bg-success rowmodal">
                     <div class="col-12 p-0">
-                        <div id="carouselExampleDark-{{ $article->id }}" class="carousel carousel-light slide h-100">
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#carouselExampleDark-{{ $article->id }}"
-                                    data-bs-slide-to="0" class="active" aria-current="true"
-                                    aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#carouselExampleDark-{{ $article->id }}"
-                                    data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#carouselExampleDark-{{ $article->id }}"
-                                    data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        @if ($article->images->count() > 0)
+                            <div id="carouselExampleDark-{{ $article->id }}"
+                                class="carousel carousel-dark slide h-100">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselExampleDark-{{ $article->id }}"
+                                        data-bs-slide-to="0" class="active" aria-current="true"
+                                        aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carouselExampleDark-{{ $article->id }}"
+                                        data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carouselExampleDark-{{ $article->id }}"
+                                        data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                    <button type="button" data-bs-target="#carouselExampleDark-{{ $article->id }}"
+                                        data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                      <button type="button" data-bs-target="#carouselExampleDark-{{ $article->id }}"
+                                            data-bs-slide-to="4" aria-label="Slide 5"></button>
+                                     <button type="button" data-bs-target="#carouselExampleDark-{{ $article->id }}"
+                                            data-bs-slide-to="5" aria-label="Slide 6"></button>
+                                     <button type="button" data-bs-target="#carouselExampleDark-{{ $article->id }}"
+                                              data-bs-slide-to="6" aria-label="Slide 7"></button>
+                                     <button type="button" data-bs-target="#carouselExampleDark-{{ $article->id }}"
+                                              data-bs-slide-to="7" aria-label="Slide 8"></button>
+                                            
+                                </div>
+                                <div class="carousel-inner w-100">
+                                    @foreach ($article->images as $key => $image)
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                        <div class="carousel-item  @if ($loop->first) active @endif"
+                                            data-bs-interval="10000">
+                                            <img src="{{ Storage::url($image->path) }}"
+                                                class=" d-block rounded shadow w-100" alt="...">
+                                        </div>
+                                    @endforeach
+                                </div>
+                                @if ($article->images->count() > 1)
+                                    <button class="carousel-control-prev" type="button"
+                                        data-bs-target="#carouselExampleDark-{{ $article->id }}" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button"
+                                        data-bs-target="#carouselExampleDark-{{ $article->id }}" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                @endif
                             </div>
-                            <div class="carousel-inner w-100">
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                                <div class="carousel-item active" data-bs-interval="10000">
-                                    <img src="https://picsum.photos/300" class="w-100" alt="...">
-                                </div>
-                                <div class="carousel-item" data-bs-interval="2000">
-                                    <img src="https://picsum.photos/301" class="w-100" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="https://picsum.photos/302" class="w-100" alt="...">
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button"
-                                data-bs-target="#carouselExampleDark-{{ $article->id }}" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button"
-                                data-bs-target="#carouselExampleDark-{{ $article->id }}" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
+                         @else
+                            <img src="https://picsum.photos/300" alt="foto alternativa">
+                        @endif
                     </div>
+
                 </div>
                 <div class="col-12 text-start pt-2 ps-1">
                     <small
