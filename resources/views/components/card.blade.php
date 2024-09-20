@@ -28,7 +28,7 @@
         <div class="modal-content">
             <div class="modal-body">
                 <div class="row bg-success rowmodal">
-                    <div class="col-12">
+                    <div class="col-12 p-0">
                         <div id="carouselExampleDark-{{ $article->id }}" class="carousel carousel-light slide h-100">
                             <div class="carousel-indicators">
                                 <button type="button" data-bs-target="#carouselExampleDark-{{ $article->id }}"
@@ -65,7 +65,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 text-start pt-5">
+                <div class="col-12 text-start pt-2 ps-1">
                     <small
                         class="d-inline-flex px-2 py-1 text-white bg-secondary border border-secondary rounded-2">{{ $article->category->name }}</small>
                     <small

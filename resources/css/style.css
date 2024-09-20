@@ -170,9 +170,9 @@ footer {
    min-height: 60px;
 }
 
-.rowmodal {
-   margin: -30px;
-}
+/* .rowmodal {
+   margin: -20px;
+} */
 
 
 .carousel-inner {
@@ -224,6 +224,12 @@ footer {
    -webkit-backdrop-filter: blur(13.6px);
    border: 1px solid rgba(11, 5, 5, 0.97);
 }
+.modal-body {
+   overflow-x: hidden;
+   padding: 0 !important;
+   
+}
+
 
 .modal-content {
    background: linear-gradient(90deg, rgba(251,234,151,1) 0%, rgba(245,206,86,1) 33%, rgba(219,163,58,1) 69%, rgba(206,143,56,1) 100%);
