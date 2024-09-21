@@ -2,12 +2,13 @@
 
 namespace App\Livewire;
 
-use App\Jobs\ResizeImage;
 use App\Models\Article;
 use Livewire\Component;
+use App\Jobs\ResizeImage;
 use Livewire\WithFileUploads;
 use Livewire\Attributes\Validate;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 class CreateArticleForm extends Component
 {
