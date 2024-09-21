@@ -4,7 +4,7 @@
     </div>
 
     <div class="card-body d-flex flex-column justify-content-center align-items-center">
-        <img src="{{ $article->images->isNotEmpty() ? Storage::url($article->images->first()->path) : 'https://picsum.photos/200' }}"
+        <img src="{{ $article->images->isNotEmpty() ? $article->images->first()->getUrl(300, 300) : 'https://picsum.photos/300' }}"
             class="card-img-top" alt="">
         <h5 class="card-text truncate">Titolo: {{ $article->title }}</h5>
         <p class="card-text truncate">Descrizione: {{ $article->description }}</p>
@@ -61,7 +61,7 @@
                                             aria-label="Close"></button>
                                         <div class="carousel-item  @if ($loop->first) active @endif"
                                             data-bs-interval="10000">
-                                            <img src="{{ Storage::url($image->path) }}"
+                                            <img src="{{ $image->getUrl(300, 300) }}"
                                                 class=" d-block rounded shadow w-100" alt="...">
                                         </div>
                                     @endforeach
