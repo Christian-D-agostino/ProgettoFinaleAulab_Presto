@@ -19,9 +19,11 @@ Route::get('/revisor/index', [RevisorController::class, 'index'])->name('revisor
 Route::patch('/accept/{article}', [RevisorController::class, 'accept'])->name('revisor.accept');
 Route::patch('/reject/{article}', [RevisorController::class, 'reject'])->name('revisor.reject');
 Route::patch('/undo/{article}', [RevisorController::class, 'undo'])->name('revisor.undo');
+Route::get('/revisor/form', [RevisorController::class, 'formRevisor'])->name('revisor.form');
+Route::post('/revisor/submit', [RevisorController::class, 'submit'])->name('revisor.submit');
 
 // Rotte della mail
-Route::get('/revisor/request', [RevisorController::class, 'becomeRevisor'])->name('become.revisor')->middleware('auth');
+Route::post('/revisor/request', [RevisorController::class, 'becomeRevisor'])->name('become.revisor')->middleware('auth');
 Route::get('/make/revisor/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
 
 //rotta button search

@@ -3,20 +3,20 @@
     <div class="container-fluid text-center">
         <div class="row">
             <header class="vh-100 d-flex justify-content-center align-items-center bg-custom">
-                @if (session('error'))
-                    <div class="alert alert-success">
-                        {{ session('error') }}
-                    </div>
-                @endif
-                @if (session('success'))
-                    <div class="alert alert-success">
-                        {{ session('success') }}
-                    </div>
-                @endif
                 <div class="col-12 d-flex justify-content-end flex-column align-items-center h-75">
+                    @if (session('error'))
+                        <div class="alert alert-success">
+                            {{ session('error') }}
+                        </div>
+                    @endif
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
                     <a href="{{ route('article.create') }}" class="btn btn-custom">Crea un Articolo</a>
                 </div>
-        </div>
+            </div>
         </header>
         <section class="container-fluid bg-cards">
             <div class="row row-numbers justify-content-evenly m-5 box-shadow text-white">

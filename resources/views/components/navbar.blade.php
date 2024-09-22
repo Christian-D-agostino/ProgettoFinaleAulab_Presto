@@ -10,7 +10,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav w-100">
             <li class="nav-item">
                 <a class="nav-link @if (Route::currentRouteName() == 'welcome') active @endif" aria-current="page"
                     href="{{ route('welcome') }}">Home</a>
@@ -20,12 +20,14 @@
                     href="{{ route('article.index') }}">Articoli</a>
             </li>
             @auth
-            @if(Auth::user()->is_revisor)
-                <li class="nav-item">
-                    <a class="nav-link position-relative" href="{{ route('revisor.index') }}" role="button">Zona revisore <span class="notify translate-middle badge rounded-pill bg-danger">{{App\Models\Article::toBeRevisedCount()}}
-                    </span>
-                    </a>
-                </li>
+                @if (Auth::user()->is_revisor)
+                    <li class="nav-item">
+                        <a class="nav-link position-relative" href="{{ route('revisor.index') }}" role="button">Zona
+                            revisore <span
+                                class="notify translate-middle badge rounded-pill bg-danger">{{ App\Models\Article::toBeRevisedCount() }}
+                            </span>
+                        </a>
+                    </li>
                 @endif
             @endauth
             <li class="nav-item dropdown" data-bs-theme="dark">
@@ -75,12 +77,20 @@
                                 Login</a></li>
                     </ul>
                 </li>
-
-            @endauth
-        </ul>
+            </ul>
+        @endauth
+        @auth
+            @if (Auth::user()->is_revisor == false)
+                <ul class="navbar-nav w-100">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{{route('revisor.form')}}">Lavora con noi</a>
+                    </li>
+            @endif
+        @endauth
         <form class="d-flex ms-auto" role="search" action="{{ route('article.search') }}" method="GET">
             <div class="input-group">
-                <input type="search" name="query" class="form-control bg-black border-white text-white" placeholder="Search" aria-label="search">
+                <input type="search" name="query" class="form-control bg-black border-white text-white"
+                    placeholder="Search" aria-label="search">
                 <button type="submit" class="input-group-text btn btn-outline-danger" id="basic-addon2">
                     Search
                 </button>

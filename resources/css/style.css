@@ -20,11 +20,8 @@ h5,
 }
 
 /* cursore */
-*,
-.btn,
-a,
-div {
-   cursor: url('/public/media/newantonio.png'), auto;
+*{
+   cursor: url('/public/media/iconaFreccia.png'), auto;
 }
 
 ;

@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-12 ">
                 <div class="rounded">
-                    <h1 class="mt-5 pb-2 text-center">Revisor dashboard</h1>
+                    <h1 class="mt-5 p-5 pb-2 text-center">Revisor dashboard</h1>
                 </div>
                 <div class="row justify-content-center align-items-center">
                     <div class="col-3">
@@ -22,17 +22,7 @@
                         @endif
                     </div>
                 </div>
-                @foreach ($lastArticle as $article)
-                    <h1 class="text-center pt-5">Modifica ultimo articolo revisionato: {{ $article->title }}</h1>
 
-                    <div class="d-flex pb-4 justify-content-around">
-                        <form action="{{ route('revisor.undo', compact('article')) }}" method="POST">
-                            @csrf
-                            @method('PATCH')
-                            <button class="btn btn-outline-danger" type="submit">Resetta</button>
-                        </form>
-                    </div>
-                @endforeach
             </div>
         </div>
 
@@ -43,8 +33,7 @@
                     <div class="row justify-content-start">
                         <div class="col-6 mb-4 text-center gallery">
                             @for ($i = 0; $i < 6; $i++)
-                                <img  src="https://picsum.photos/30{{ $i }}?random"
-                                    alt="Foto segnaposto">
+                                <img src="https://picsum.photos/30{{ $i }}?random" alt="Foto segnaposto">
                             @endfor
                         </div>
 
@@ -76,7 +65,7 @@
                 </div>
             </div>
         @else
-            <div class="row justify-content-center align-items-center height-custom text-center">
+            <div class="row justify-content-center mt-5 align-items-center height-custom text-center">
                 <div class="col-12">
                     <h1 class="fst-italic">Nessun articolo da revisionare</h1>
                     <a class="btn btn-success" href="{{ route('welcome') }}">Torna alla home</a>
@@ -84,4 +73,16 @@
             </div>
         @endif
     </div>
+    @foreach ($lastArticle as $article)
+        
+            <h1 class="text-center pt-5">Modifica ultimo articolo revisionato: {{ $article->title }}</h1>
+            <div class="d-flex pb-4 justify-content-around">
+                <form action="{{ route('revisor.undo', compact('article')) }}" method="POST">
+                    @csrf
+                    @method('PATCH')
+                    <button class="btn btn-danger" type="submit">Resetta ultimo articolo</button>
+                </form>
+            </div>
+        
+    @endforeach
 </x-layout>

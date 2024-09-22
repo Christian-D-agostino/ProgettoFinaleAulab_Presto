@@ -1,7 +1,7 @@
 <x-layout>
     <div class="container-fluid">
-        <div class="row py-5 justify-content-center align-items-center text-center">
-            <div class="col-12">
+        <div class="row mt-5 py-5 justify-content-center align-items-center text-center">
+            <div class="col-12 mt-5 pt-5">
                 <h1 class="display-1">Risultati per la ricerca " <span class="fst-italic">{{ $query }}
                     </span>"
                 </h1>
@@ -9,7 +9,7 @@
         </div>
         <div class="row height-custom justify-content-center align-items-center py-5">
             @forelse ($articles as $article)
-                <div class="col-12 col-md-3">
+                <div class="col-12 col-md-3 justify-content-center d-flex">
                     <x-card :article="$article" />
                 </div>
             @empty

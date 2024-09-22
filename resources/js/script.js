@@ -50,7 +50,6 @@ function createInterval(number, incraseNumber, seconds){
 }
 
 let check1 = true
-
 let observer = new IntersectionObserver( (intersecting) => {
     intersecting.forEach( (el) => {
         if (el.isIntersecting && check1) {
@@ -66,3 +65,4 @@ let observer = new IntersectionObserver( (intersecting) => {
 if (incraseNumberOne) {
     observer.observe(incraseNumberOne)
 }
+
