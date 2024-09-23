@@ -28,3 +28,5 @@ Route::get('/make/revisor/{user}', [RevisorController::class, 'makeRevisor'])->n
 
 //rotta button search
 Route::get('/search/article', [PublicController::class, 'searchArticles'])->name('article.search');
+//rotta lingua
+Route::post('/lingua/{lang}', [PublicController::class, 'setLanguage'])->name('setLocale');

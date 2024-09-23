@@ -51,8 +51,8 @@ class CreateArticleForm extends Component
         ]);
         if(count($this->images) > 0){
            foreach($this->images as $image){
-            $newFileName = "articles/{$this->article->id}";
-            $newImage = $this->article->images()->create([
+                    $newFileName = "articles/{$this->article->id}";
+                    $newImage = $this->article->images()->create([
                    'path' => $image->store($newFileName, 'public')]);
                    dispatch(new ResizeImage($newImage->path, 300, 300));
            } 
