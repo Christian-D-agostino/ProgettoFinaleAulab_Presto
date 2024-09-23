@@ -1,7 +1,7 @@
 <x-layout>
     <div class="container mt-5">
         <div class="row justify-content-center pt-5 bg-form">
-            <div class="col-12 text-center">
+            <div class="col-12 text-center pt-5 pb-4">
                 <h1 class="display-4">Richiedi di lavorare con noi</h1>
             </div>
         </div>
@@ -40,14 +40,14 @@
                     </div>
 
                     
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-outline-dark">Invia richiesta</button>
+                    </div>
                         </div>
                     </div>
 
 
-                    <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-outline-dark">Invia richiesta</button>
-                    </div>
-
+                    
                 </form>
             </div>
         </div>

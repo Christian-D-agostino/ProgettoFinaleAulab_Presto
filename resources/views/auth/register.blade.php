@@ -1,7 +1,7 @@
 <x-layout>
     <div class="container mt-5">
         <div class="row justify-content-center pt-5 bg-form">
-            <div class="col-12 text-center">
+            <div class="col-12 text-center pt-5 pb-4">
                 <h1 class="display-4">Registrati</h1>
             </div>
         </div>
