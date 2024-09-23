@@ -1,7 +1,5 @@
 <x-layout>
-    @if (session('success'))
-        <h1>ciao</h1>
-    @endif
+
     <div class="container-fluid pt-5">
         <div class="row">
             <div class="col-12 ">
@@ -28,19 +26,31 @@
 
 
         @if ($article_to_check)
-            <div class="row justify-content-center pt-5">
-                <div class="col-6">
-                    <div class="row justify-content-start">
-                        <div class="col-6 mb-4 text-center gallery">
-                            @for ($i = 0; $i < 6; $i++)
-                                <img src="https://picsum.photos/30{{ $i }}?random" alt="Foto segnaposto">
-                            @endfor
+            <div class="row justify-content-center">
+                @if ($article_to_check->images->count())
+                    @foreach ($article_to_check->images as $key0 => $image)
+                        <div class="col-6 col-md-4 mb-4">
+                            <img src="{{ $image->getUrl(300, 300) }}" class="img-fluid rounded shadow" alt="">
                         </div>
-
-
-
+                    @endforeach
+                @else
+                    <div class="row justify-content-center pt-5">
+                        <div class="col-6">
+                            <div class="row justify-content-start">
+                                @for ($i = 0; $i < 6; $i++)
+                                    <div class="col-6 mb-4 text-center gallery">
+                                        <img src="https://picsum.photos/30{{ $i }}?random"
+                                            alt="Foto segnaposto">
+                                    </div>
+                                @endfor
+                            </div>
+                        </div>
                     </div>
-                </div>
+                @endif
+
+
+
+
 
                 <div class="col-md-4 ps-4 d-flex flex-column justify-content-between">
                     <div>

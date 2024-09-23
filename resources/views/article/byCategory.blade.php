@@ -16,7 +16,7 @@
                 <div class="col-12 text-center">
                     <h3>Non ci sono Articoli per questa categoria</h3>
                     @auth
-                        <a href="{{ route('article.create') }}" class="btn btn-custom">Crea Articolo</a>
+                        <a href="{{ route('article.create') }}" class="btn btn-custom ">Crea Articolo</a>
                     @endauth
                 </div>
 

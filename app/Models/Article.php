@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\User;
+use App\Models\Image;
 use App\Models\Category;
 use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
@@ -48,5 +49,9 @@ class Article extends Model
     public function user() : BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function images(){
+        return $this->hasMany(Image::class);
     }
 }
