@@ -1,18 +1,18 @@
-<form class="bg-body-tertiary shadow rounded p-5 my-5" wire:submit='save'>
+<form class="bg-body-tertiary shadow rounded p-5 my-5 text-black" wire:submit='save'>
     @if (session('created'))
         <div class="alert alert-success">
             {{ session('created') }}
         </div>
     @endif
     <div class="mb-3">
-        <label for="title" class="form-label">Titolo</label>
+        <label for="title" class="form-label">{{__('ui.title')}}</label>
         <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" wire:model.live="title">
         @error('title')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
     <div class="mb-3">
-        <label for="description" class="form-label">Descrizione</label>
+        <label for="description" class="form-label">{{__('ui.description')}} </label>
         <textarea class="form-control @error('description') is-invalid @enderror" cols="30" rows="10" id="description"
             wire:model.live="description"></textarea>
         @error('description')
@@ -20,7 +20,7 @@
         @enderror
     </div>
     <div class="mb-3">
-        <label for="price" class="form-label">Prezzo</label>
+        <label for="price" class="form-label">{{__('ui.price')}} </label>
         <input type="number" class="form-control @error('price') is-invalid @enderror" id="price"
             wire:model.live="price">
         @error('price')
@@ -30,9 +30,9 @@
     <div class="mb-3">
         <select class="form-control @error('category') is-invalid @enderror" name="category" id="category"
             wire:model.live="category">
-            <option label value="">Seleziona una Categoria</option>
+            <option label value="">{{__('ui.selectcategory')}} </option>
             @foreach ($categories as $category)
-                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                <option value="{{ $category->id }}">{{__("ui.$category->name")}}</option>
             @endforeach
         </select>
         @error('category')
@@ -55,7 +55,7 @@
                 <p>Photo Preview: </p>
                 <div class="row border border-4 border-success rounded shadow py-4">
                     @foreach ($images as $key=>$image)
-                    <div class="col-2 d-flex-flex-column align-items-center my-3">
+                    <div class="col-4 d-flex flex-column align-items-center my-3 ">
                         <div class="img-preview mx-auto rounded shadow" style="background-image: url({{ $image->temporaryUrl()}})"></div>
                         <button type="button" class="btn btn-danger mt-1" wire:click="removeImage({{ $key }})">X</button>
                     </div>
@@ -66,7 +66,7 @@
     @endif
 
     <div class="d-flex justify-content-center">
-        <button type="submit" class="btn btn-dark">Crea</button>
+        <button type="submit" class="btn btn-dark">{{__('ui.create')}} </button>
     </div>
 
 </form>

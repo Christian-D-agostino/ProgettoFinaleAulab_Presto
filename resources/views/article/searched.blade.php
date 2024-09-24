@@ -2,12 +2,12 @@
     <div class="container-fluid">
         <div class="row mt-5 py-5 justify-content-center align-items-center text-center">
             <div class="col-12 mt-5 pt-5">
-                <h1 class="display-1">Risultati per la ricerca " <span class="fst-italic">{{ $query }}
+                <h1 class="display-1">{{__('ui.results')}} " <span class="fst-italic">{{ $query }}
                     </span>"
                 </h1>
             </div>
         </div>
-        <div class="row height-custom justify-content-center align-items-center py-5">
+        <div class="row justify-content-center align-items-center">
             @forelse ($articles as $article)
                 <div class="col-12 col-md-3 justify-content-center d-flex">
                     <x-card :article="$article" />
@@ -15,7 +15,7 @@
             @empty
                 <div class="col-12">
                     <h3 class="text-center">
-                        Nessun articolo corrispondente alla tua ricerca
+                        {{__('ui.noarticlesresult')}}
                     </h3>
                 </div>
             @endforelse

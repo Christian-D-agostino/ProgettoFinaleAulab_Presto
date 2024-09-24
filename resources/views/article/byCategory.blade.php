@@ -3,7 +3,7 @@
     <div class="container-fluid pt-5">
         <div class="row justify-content-center align-items-center py-5 text-center">
             <div class="col-12 pt-5">
-                <h1 class="display-4">Articoli della Categoria <span class="fst-italic fw-bold">{{ $category->name }}</span></h1>
+                <h1 class="display-4">{{__('ui.articlescategory')}} <span class="fst-italic fw-bold"> {{ __("ui.$category->name") }}</span></h1>
             </div>
         </div>
 
@@ -13,10 +13,10 @@
                     <x-card :article="$article"/>
                 </div>
             @empty
-                <div class="col-12 text-center">
-                    <h3>Non ci sono Articoli per questa categoria</h3>
+                <div class="col-md-3 col-10 text-center">
+                    <h3>{{__('ui.noarticlescategory')}} </h3>
                     @auth
-                        <a href="{{ route('article.create') }}" class="btn btn-custom ">Crea Articolo</a>
+                        <a href="{{ route('article.create') }}" class="btn btn-custom mt-4">{{__('ui.insertarticle')}} </a>
                     @endauth
                 </div>
 
