@@ -10,7 +10,7 @@ use Illuminate\Database\Seeder;
 class DatabaseSeeder extends Seeder
 {
     public $categories = [
-        'elettronica','abbigliamento','salute e bellezza','casa e giardinaggio','giocattoli','sport','animali domestici','libri e riviste','accessori','motori'
+        'Elettronica','Abbigliamento','Salute e bellezza','Casa e giardinaggio','Giocattoli','Sport','Animali domestici','Libri e riviste','Accessori','Motori'
     ];
     public function run(): void
     {

@@ -23,6 +23,9 @@ class RevisorController extends Controller
         return redirect(route('revisor.index'))->with('success', "Articolo $article->title resettato");
     } 
 
+    public function formRevisor(){
+        return view('revisor.form');
+    }
 
     public function accept(Article $article){
         $article->setAccepted(true);
@@ -34,13 +37,22 @@ class RevisorController extends Controller
         return redirect(route('revisor.index', compact('article')))->with('notSuccess', "Articolo $article->title rifiutato");
     } 
 
-    public function becomeRevisor(){
-        Mail::to('admin@presto.it')->send(new BecomeRevisor(Auth::user()));
+    public function becomeRevisor(Request $request){
+        $name = $request->name;
+        $email = $request->email;
+        $user = Auth::user();
+        Mail::to($email)->send(new BecomeRevisor($name, $email, $user));
         return redirect()->route('welcome')->with('success', "Richiesta di revisione inviata correttamente");
     }
 
     public function makeRevisor(User $user){
         Artisan::call('app:make-user-revisor', ['email' => $user->email]);
         return redirect()->route('welcome')->with('success', "Utente {$user->name} ora revisore");
+    }
+
+    public function submit(Request $request){
+        $name = $request->name;
+        $email = $request->email;
+        return redirect()->route('welcome')->with('success', "Richiesta di diventare revisore inviata correttamente");
     }
 }

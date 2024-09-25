@@ -21,7 +21,7 @@ window.addEventListener("scroll", () => {
 
             navbar.style.top = "0"
         }else{
-            navbar.style.width= "70%"
+            navbar.style.width= "80%"
 
             navbar.style.top = "40px"
         }
@@ -50,7 +50,6 @@ function createInterval(number, incraseNumber, seconds){
 }
 
 let check1 = true
-
 let observer = new IntersectionObserver( (intersecting) => {
     intersecting.forEach( (el) => {
         if (el.isIntersecting && check1) {
@@ -66,3 +65,25 @@ let observer = new IntersectionObserver( (intersecting) => {
 if (incraseNumberOne) {
     observer.observe(incraseNumberOne)
 }
+
+var swiper = new Swiper(".mySwiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "4",
+    loop: true,
+    coverflowEffect: {
+      rotate: 100,
+      stretch: 0,
+      depth: -150,
+      modifier: 1,
+      slideShadows: false,
+    },
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+    pagination: {
+      el: ".swiper-pagination",
+    },
+  });
