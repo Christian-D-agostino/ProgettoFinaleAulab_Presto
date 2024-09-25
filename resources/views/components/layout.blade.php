@@ -13,7 +13,7 @@
 <body class="bg-layout">
     <x-navbar />
 
-    <div class="min-vh-100">
+    <div>
 
         {{ $slot }}
 

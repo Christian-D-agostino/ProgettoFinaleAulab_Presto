@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-12 ">
                 <div class="rounded">
-                    <h1 class="mt-5 p-5 pb-5 text-center">Revisor dashboard</h1>
+                    <h1 class="mt-5 p-5 pb-5 text-center display-4 fst-italic text-uppercase">Revisor Dashboard</h1>
                 </div>
                 <div class="row justify-content-center align-items-center">
                     <div class="col-3">
@@ -100,12 +100,13 @@
                     <button class="btn btn-danger m-2" type="submit">{{__('ui.reject')}} </button>
                 </form>
             </div>
+
         </div>
     </div>
 
     </div>
 @else
-    <div class="row justify-content-center mt-5 align-items-center height-custom text-center">
+    <div class="row justify-content-center align-items-center text-center">
         <div class="col-12">
             <h1 class="fst-italic">{{__('ui.noarticlesreview')}} </h1>
             <a class="btn btn-success" href="{{ route('welcome') }}">{{__('ui.backhome')}} </a>

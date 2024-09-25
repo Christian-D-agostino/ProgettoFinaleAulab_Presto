@@ -55,6 +55,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-10">
+                    <h1 class="display-4 d-flex justify-content-center m-0">Ultimi Aricoli</h1>
                     <div class="swiper mySwiper height-custom-2 d-md-block d-none">
                         <div class="swiper-wrapper">
                             @forelse ($articles as $article)
