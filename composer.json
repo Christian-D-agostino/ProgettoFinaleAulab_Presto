@@ -7,6 +7,7 @@
     "require": {
         "php": "^8.2",
         "algolia/algoliasearch-client-php": "^4.4",
+        "google/cloud-vision": "^1.9",
         "http-interop/http-factory-guzzle": "^1.2",
         "laravel/fortify": "^1.24",
         "laravel/framework": "^11.9",

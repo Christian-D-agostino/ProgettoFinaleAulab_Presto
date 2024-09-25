@@ -38,10 +38,13 @@ class RevisorController extends Controller
     } 
 
     public function becomeRevisor(Request $request){
-        $name = $request->name;
-        $email = $request->email;
+       
+        $email = Auth::user()->email;
+        $name = Auth::user()->name;
+        $description = $request->description;
+      
         $user = Auth::user();
-        Mail::to($email)->send(new BecomeRevisor($name, $email, $user));
+        Mail::to($email)->send(new BecomeRevisor( $name, $description, $email, $user));
         return redirect()->route('welcome')->with('success', "Richiesta di revisione inviata correttamente");
     }
 

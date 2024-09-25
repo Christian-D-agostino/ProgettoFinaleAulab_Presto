@@ -20,12 +20,15 @@ class BecomeRevisor extends Mailable
      */
     public $name;
     public $email;
-    public $user;
-    public function __construct($name, $email, $user)
+    public $user;   
+    public $description;
+   
+    public function __construct($name, $description, $email, $user)
     {
         $this->name = $name;
         $this->email = $email;
         $this->user = $user;
+        $this->description = $description;
     }
 
     /**
@@ -34,7 +37,7 @@ class BecomeRevisor extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: "Rendi revisore l'utente {$this->name}",
+            subject: "Rendi revisore l'utente {$this->email}",
             from: new Address($this->email)
         );
     }

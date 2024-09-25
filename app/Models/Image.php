@@ -15,6 +15,13 @@ class Image extends Model
         'path',
     ];
 
+    protected function casts(): array
+    {
+        return [
+            'labels' => 'array',
+        ];
+    }
+
     public static function getUrlByFilePath($filePath, $w = null, $h = null) {
         if (!$w && !$h) {
             return Storage::url($filePath);

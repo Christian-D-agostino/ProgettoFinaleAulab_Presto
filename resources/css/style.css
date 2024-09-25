@@ -374,3 +374,13 @@ body {
    height: 120px;
    width: 120px;
 }
+
+.MoveMargin{
+   color:black;
+   position: absolute;
+   z-index:999;
+}
+
+.colorize{
+   color:black;
+}

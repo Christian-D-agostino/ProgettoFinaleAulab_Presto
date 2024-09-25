@@ -50,6 +50,65 @@
                                     <div class="carousel-item @if ($key0 == 0) active @endif">
                                         <img src="{{ $image? $image->getUrl(300, 300) : 'https://picsum.photos/300' }}" class="d-block img-fluid w-100" alt="...">
                                     </div>
+
+
+                                    {{-- inizio ratings --}}
+                                    <div class="col-md-5 MoveMargin ">
+                                        <div class="card-body">
+                                            <h5 class="text-danger">Labels</h5>
+                                          
+                                            @if($image->labels)
+                                                @foreach($image->labels as $label)
+                                                         <p class="text-danger">#{{$label}}</p>
+                                                @endforeach
+                                            @else
+                                                <p class="fst-italic text-danger">No labels</p>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="col-8 col-md-3 ps-3">
+                                        <div class="card-body">
+                                            <h5 >Ratings</h5>
+                                            <div class="row justify-content-center">
+                                                <div class="col-2">
+                                                    <div class="text-center mx-auto{{$image->adult}}"></div>
+                                                </div>
+                                                <div class="col-10 text-black">adult</div>
+                                            </div>
+
+                                            <div class="row justify-content-center">
+                                                <div class="col-2">
+                                                    <div class="text-center mx-auto{{$image->medical}}"></div>
+                                                </div>
+                                                <div class="col-10 text-black">medical</div>
+                                            </div>
+
+                                            <div class="row justify-content-center">
+                                                <div class="col-2">
+                                                    <div class="text-center mx-auto{{$image->racy}}"></div>
+                                                </div>
+                                                <div class="col-10">racy</div>
+                                            </div>
+
+                                            <div class="row justify-content-center">
+                                                <div class="col-2">
+                                                    <div class="text-center mx-auto{{$image->violence}}"></div>
+                                                </div>
+                                                <div class="col-10">violence</div>
+                                            </div>
+
+                                            <div class="row justify-content-center">
+                                                <div class="col-2">
+                                                    <div class="text-center mx-auto{{$image->spoof}}"></div>
+                                                </div>
+                                                <div class="col-10">spoof</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {{-- fine ratings --}}
+
                                     @empty
                             @for ($i = 0; $i < 6; $i++)
 
