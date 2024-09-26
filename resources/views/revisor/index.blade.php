@@ -7,7 +7,7 @@
                     <h1 class="mt-5 p-5 pb-5 text-center display-4 fst-italic text-uppercase">Revisor Dashboard</h1>
                 </div>
                 <div class="row justify-content-center align-items-center">
-                    <div class="col-3">
+                    <div class="col-12 col-md-3">
                         @if (session('success'))
                             <div class="alert alert-success">
                                 {{ session('success') }}
@@ -27,161 +27,226 @@
 
         @if ($article_to_check)
             <div class="row justify-content-around">
-                <div class="col-10 col-md-4">
-                    @if ($article_to_check->images->count() >= 0)
+                <div class="col-10 col-md-6">
+                    @if ($article_to_check->images->count() > 0)
                         <div id="carouselExampleIndicators" class="carousel slide">
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                                    class="active" aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                                    aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                                    aria-label="Slide 3"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
-                                    aria-label="Slide 4"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
-                                    aria-label="Slide 5"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"
-                                    aria-label="Slide 6"></button>
-
-                            </div>
                             <div class="carousel-inner">
-                                @forelse ($article_to_check->images as $key0 => $image)
-                                    <div class="carousel-item @if ($key0 == 0) active @endif">
-                                        <img src="{{ $image? $image->getUrl(300, 300) : 'https://picsum.photos/300' }}" class="d-block img-fluid w-100" alt="...">
-                                    </div>
+                                @foreach ($article_to_check->images as $key => $image)
+                                    <div id="{{ $image->id . 'image' }}"
+                                        class="carousel-item carouselrevisor3 @if ($key == 0) active @endif">
+                                        <div class="row justify-content-center">
+                                            <div class="col-12 col-md-6 text-center">
+                                                <img src="{{ $image ? $image->getUrl(300, 300) : 'https://picsum.photos/300' }}"
+                                                    class="img-fluid" alt="...">
+                                            </div>
+                                            {{-- DEVE ANDARE QUI --}}
+                                            {{-- <div class="col-12 col-md-6">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h5 class="text-black">Labels</h5>
+                                                        @if ($article_to_check->images->count() > 0)
+                                                            @foreach ($image->labels as $label)
+                                                                <small
+                                                                    class="text-black p-1">{{ $label }}</small>
+                                                            @endforeach
+                                                        @else
+                                                            <p class="fst-italic text-danger">No labels</p>
+                                                        @endif
+                                                    </div>
 
-
-                                    {{-- inizio ratings --}}
-                                    <div class="col-md-5 MoveMargin ">
-                                        <div class="card-body">
-                                            <h5 class="text-danger">Labels</h5>
-                                          
-                                            @if($image->labels)
-                                                @foreach($image->labels as $label)
-                                                         <p class="text-danger">#{{$label}}</p>
-                                                @endforeach
-                                            @else
-                                                <p class="fst-italic text-danger">No labels</p>
-                                            @endif
+                                                    <div class="card-body">
+                                                        <h5 class="mt-2 text-black">Ratings</h5>
+                                                        <ul class="list-unstyled">
+                                                            <li class="row">
+                                                                <div class="col-2 text-center">
+                                                                    <span class="mx-auto {{ $image->adult }}"></span>
+                                                                </div>
+                                                                <div class="col-10">Adult</div>
+                                                            </li>
+                                                            <li class="row">
+                                                                <div class="col-2 text-center">
+                                                                    <span class="mx-auto {{ $image->medical }}"></span>
+                                                                </div>
+                                                                <div class="col-10">Medical</div>
+                                                            </li>
+                                                            <li class="row">
+                                                                <div class="col-2 text-center">
+                                                                    <span class="mx-auto {{ $image->racy }}"></span>
+                                                                </div>
+                                                                <div class="col-10">Racy</div>
+                                                            </li>
+                                                            <li class="row">
+                                                                <div class="col-2 text-center">
+                                                                    <span class="mx-auto {{ $image->violence }}"></span>
+                                                                </div>
+                                                                <div class="col-10">Violence</div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div> --}}
                                         </div>
                                     </div>
-
-                                    <div class="col-8 col-md-3 ps-3">
-                                        <div class="card-body">
-                                            <h5 >Ratings</h5>
-                                            <div class="row justify-content-center">
-                                                <div class="col-2">
-                                                    <div class="text-center mx-auto{{$image->adult}}"></div>
-                                                </div>
-                                                <div class="col-10 text-black">adult</div>
-                                            </div>
-
-                                            <div class="row justify-content-center">
-                                                <div class="col-2">
-                                                    <div class="text-center mx-auto{{$image->medical}}"></div>
-                                                </div>
-                                                <div class="col-10 text-black">medical</div>
-                                            </div>
-
-                                            <div class="row justify-content-center">
-                                                <div class="col-2">
-                                                    <div class="text-center mx-auto{{$image->racy}}"></div>
-                                                </div>
-                                                <div class="col-10">racy</div>
-                                            </div>
-
-                                            <div class="row justify-content-center">
-                                                <div class="col-2">
-                                                    <div class="text-center mx-auto{{$image->violence}}"></div>
-                                                </div>
-                                                <div class="col-10">violence</div>
-                                            </div>
-
-                                            <div class="row justify-content-center">
-                                                <div class="col-2">
-                                                    <div class="text-center mx-auto{{$image->spoof}}"></div>
-                                                </div>
-                                                <div class="col-10">spoof</div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {{-- fine ratings --}}
-
-                                    @empty
-                            @for ($i = 0; $i < 6; $i++)
-
-                                    <div class="carousel-item @if ($i == 0) active @endif">
-                                        <img src="https://picsum.photos/30{{ $i }}?random" class="d-block img-fluid w-100" alt="...">
-                                    </div>
-                            @endfor
-                                    
-                                @endforelse
-
+                                @endforeach
                             </div>
-                            <button class="carousel-control-prev" type="button"
+
+                            <button id="prev" class="carousel-control-prev" type="button"
                                 data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Previous</span>
                             </button>
-                            <button class="carousel-control-next" type="button"
+                            <button id="next" class="carousel-control-next" type="button"
                                 data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
+                    @else
+                        <p class="text-center">No images to display for this article.</p>
+                    @endif
                 </div>
+
+                {{-- RATINGS --}}
+                <div class="col-10 col-md-4">
+                    @foreach ($article_to_check->images as $key => $image)
+                        <div id="{{ $image->id . 'image' }}" class="card card5">
+                            <div class="card-body">
+                                <h5 class="text-black">Labels</h5>
+                                @if ($article_to_check->images->count() > 0)
+                                    @foreach ($image->labels as $label)
+                                        <small class="text-black p-1">{{ $label }}</small>
+                                    @endforeach
+                                @else
+                                    <p class="fst-italic text-danger">No labels</p>
+                                @endif
+                            </div>
+
+                            <div class="card-body">
+                                <h5 class="mt-2 text-black">Ratings</h5>
+                                <ul class="list-unstyled">
+                                    <li class="row">
+                                        <div class="col-2 text-center">
+                                            <span class="mx-auto {{ $image->adult }}"></span>
+                                        </div>
+                                        <div class="col-10">Adult</div>
+                                    </li>
+                                    <li class="row">
+                                        <div class="col-2 text-center">
+                                            <span class="mx-auto {{ $image->medical }}"></span>
+                                        </div>
+                                        <div class="col-10">Medical</div>
+                                    </li>
+                                    <li class="row">
+                                        <div class="col-2 text-center">
+                                            <span class="mx-auto {{ $image->racy }}"></span>
+                                        </div>
+                                        <div class="col-10">Racy</div>
+                                    </li>
+                                    <li class="row">
+                                        <div class="col-2 text-center">
+                                            <span class="mx-auto {{ $image->violence }}"></span>
+                                        </div>
+                                        <div class="col-10">Violence</div>
+                                    </li>
+                                    <li class="row">
+                                        <div class="col-2 text-center">
+                                            <span class="mx-auto {{ $image->spoof }}"></span>
+                                        </div>
+                                        <div class="col-10">Spoof</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+
+                {{-- COLONNA DESCRIZIONE ARTICOLO --}}
+                <div class="col-md-12 ps-4 d-flex flex-column justify-content-between mt-5">
+                    <div>
+                        <h1>{{ $article_to_check->title }}</h1>
+                        <p>{{ __('ui.author') }}: {{ $article_to_check->user->name }}</p>
+                        <p>{{ __('ui.price') }}: {{ $article_to_check->price }}</p>
+                        <p class="fst-italic"> {{ $article_to_check->category->name }}</p>
+                        <p class="h6">{{ $article_to_check->description }}</p>
+                    </div>
+                    <div class="d-flex pb-4 justify-content-start">
+                        <form action="{{ route('revisor.accept', $article_to_check) }}" method="POST">
+                            @csrf
+                            @method('PATCH')
+                            <button class="btn btn-custom m-2" type="submit">{{ __('ui.accept') }} </button>
+                        </form>
+                        <form action="{{ route('revisor.reject', $article_to_check) }}" method="POST">
+                            @csrf
+                            @method('PATCH')
+                            <button class="btn btn-custom2 m-2" type="submit">{{ __('ui.reject') }}
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        @else
+            <div class="row justify-content-center align-items-center text-center">
+                <div class="col-3">
+                    <h1 class="fst-italic">{{ __('ui.noarticlesreview') }} </h1>
+                    <a class="btn btn-custom" href="{{ route('welcome') }}">{{ __('ui.backhome') }} </a>
+                </div>
+            </div>
         @endif
-
-
-
-
-
-        {{-- COLONNA DESCRIZIONE ARTICOLO --}}
-        <div class="col-md-4 ps-4 d-flex flex-column justify-content-between">
-            <div>
-                <h1>{{ $article_to_check->title }}</h1>
-                <p>{{__('ui.author')}}: {{ $article_to_check->user->name }}</p>
-                <p>{{__('ui.price')}}: {{ $article_to_check->price }}</p>
-                <p class="fst-italic"> {{ $article_to_check->category->name }}</p>
-                <p class="h6">{{ $article_to_check->description }}</p>
-            </div>
-            <div class="d-flex pb-4 justify-content-start">
-                <form action="{{ route('revisor.accept', $article_to_check) }}" method="POST">
-                    @csrf
-                    @method('PATCH')
-                    <button class="btn btn-success m-2" type="submit">{{__('ui.accept')}} </button>
-                </form>
-                <form action="{{ route('revisor.reject', $article_to_check) }}" method="POST">
-                    @csrf
-                    @method('PATCH')
-                    <button class="btn btn-danger m-2" type="submit">{{__('ui.reject')}} </button>
-                </form>
-            </div>
-
-        </div>
-    </div>
-
-    </div>
-@else
-    <div class="row justify-content-center align-items-center text-center">
-        <div class="col-12">
-            <h1 class="fst-italic">{{__('ui.noarticlesreview')}} </h1>
-            <a class="btn btn-success" href="{{ route('welcome') }}">{{__('ui.backhome')}} </a>
-        </div>
-    </div>
-    @endif
     </div>
     @foreach ($lastArticle as $article)
-        <h1 class="text-center pt-5">{{__('ui.modifyreview')}}: {{ $article->title }}</h1>
+        <h1 class="text-center pt-5">{{ __('ui.modifyreview') }}: {{ $article->title }}</h1>
         <div class="d-flex pb-4 justify-content-around">
             <form action="{{ route('revisor.undo', compact('article')) }}" method="POST">
                 @csrf
                 @method('PATCH')
-                <button class="btn btn-danger" type="submit">{{__('ui.resetview')}} </button>
+                <button class="btn btn-custom2" type="submit">{{ __('ui.resetview') }} </button>
             </form>
         </div>
     @endforeach
-</x-layout>
 
+    <script>
+        let carouselrevisor = document.querySelectorAll('.carouselrevisor3')
+        let card2 = document.querySelectorAll('.card5')
+        let prev = document.querySelector('#prev')
+        let next = document.querySelector('#next')
+        carouselrevisor.forEach((el, index) => {
+            if (el.id == card2[index].id && el.classList.contains('active')) {
+                card2[index].classList.add('d-block')
+                card2[index].classList.remove('d-none')
+            } else {
+                card2[index].classList.add('d-none')
+                card2[index].classList.remove('d-block')
+            }
+        })
+
+        prev.addEventListener('click', () => {
+            carouselrevisor.forEach((el, index) => {
+                setTimeout(() => {
+                    if (el.id == card2[index].id && el.classList.contains('active')) {
+                        card2[index].classList.add('d-block')
+                        card2[index].classList.remove('d-none')
+                    } else {
+                        card2[index].classList.add('d-none')
+                        card2[index].classList.remove('d-block')
+                    }
+                }, 800)
+            })
+        })
+
+        next.addEventListener('click', () => {
+            carouselrevisor.forEach((el, index) => {
+                setTimeout(() => {
+                    if (el.id == card2[index].id && el.classList.contains('active')) {
+                        card2[index].classList.add('d-block')
+                        card2[index].classList.remove('d-none')
+                    } else {
+                        card2[index].classList.add('d-none')
+                        card2[index].classList.remove('d-block')
+                    }
+                }, 800)
+            })
+        })
+    </script>
+</x-layout>

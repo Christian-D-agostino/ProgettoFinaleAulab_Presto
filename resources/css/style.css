@@ -132,23 +132,29 @@ h5,
 }
 
 .btn-custom2 {
-   background-image: linear-gradient(to right, #c21500 0%, #ff0000 51%, #c21500 100%);
+   background-image: linear-gradient(to right, #b8b7b6 0%, #fdfdfd 51%, #bbb9b9 100%);
    margin: 10px;
-   height: auto;
+   padding: 10px 25px;
    text-align: center;
    text-transform: uppercase;
-   background-size: 100%;
-   color: white;
-   box-shadow: 0 0 20px #eee;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: red;
+   box-shadow: 0 0 20px #e70000;
    border-radius: 10px;
    display: block;
+}
+
+.btn-custom2:hover {
+   background-position: right center;
+   color: #ff0000;
+   text-decoration: none;
 }
 
 .bg-custom {
    background-repeat: no-repeat;
    background-size: cover;
 }
-
 
 @media screen and (min-width: 577px) and (max-width: 840px) {
    .bg-custom {
@@ -375,9 +381,10 @@ body {
    width: 120px;
 }
 
-.MoveMargin{
-   color:black;
-   position: absolute;
-   z-index:999;
+@media screen and (max-width: 576px) {
+   .rowrevisor {
+      max-height: 1000px;
+   }
 }
+
 
