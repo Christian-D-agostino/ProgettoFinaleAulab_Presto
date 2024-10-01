@@ -13,7 +13,7 @@
         <a href="{{ route('article.show', compact('article')) }}" class="btn btn-custom" data-bs-toggle="modal"
             data-bs-target="#exampleModal-{{ $article->id }}">{{__('ui.seemore')}}</a>
         @if (Route::currentRouteName() == 'article.index')
-            <a class="btn btn-grad"
+            <a class="btn btn-custom2"
                 href="{{ route('article.byCategory', ['category' => $article->category]) }}">{{ $article->category->name }}</a>
         @endif
     </div>

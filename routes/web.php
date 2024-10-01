@@ -19,7 +19,7 @@ Route::get('/revisor/index', [RevisorController::class, 'index'])->name('revisor
 Route::patch('/accept/{article}', [RevisorController::class, 'accept'])->name('revisor.accept');
 Route::patch('/reject/{article}', [RevisorController::class, 'reject'])->name('revisor.reject');
 Route::patch('/undo/{article}', [RevisorController::class, 'undo'])->name('revisor.undo');
-Route::get('/revisor/form', [RevisorController::class, 'formRevisor'])->name('revisor.form');
+Route::get('/revisor/form', [RevisorController::class, 'formRevisor'])->name('revisor.form')->middleware('auth');
 Route::post('/revisor/submit', [RevisorController::class, 'submit'])->name('revisor.submit');
 
 // Rotte della mail

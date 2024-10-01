@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container-fluid">
+    <div class="container-fluid height-custom">
         <div class="row mt-5 py-5 justify-content-center align-items-center text-center">
             <div class="col-12 mt-5 pt-5">
                 <h1 class="display-1">{{__('ui.results')}} " <span class="fst-italic">{{ $query }}
