@@ -9,9 +9,15 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Routing\Controllers\Middleware;
+use Illuminate\Routing\Controllers\HasMiddleware;
 
-class RevisorController extends Controller
+class RevisorController extends Controller implements HasMiddleware
 {
+    public static function middleware() : array
+    {
+        return [new Middleware('auth',only: ['formRevisor'])];
+    }
     public function index() {
         $article_to_check = Article::where('is_accepted', null)->first();
         $lastArticle= Article::where('is_accepted', true)->orwhere('is_accepted', false)->take(1)->latest('id')->get();
