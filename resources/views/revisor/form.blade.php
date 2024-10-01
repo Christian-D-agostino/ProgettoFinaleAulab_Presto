@@ -46,7 +46,7 @@
                             <div class="import-group-addon border border-1 border-body-tertiary rounded-start-2">
                             </div>
                             <textarea rows="10" type="text" class="form-control @error('description') is-invalid @enderror"
-                                id="description" name="description" placeholder="descrizione"></textarea>
+                                id="description" name="description" ></textarea>
                             @error('description')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror

@@ -41,7 +41,7 @@
     </div>
 
     <div class="mb-3">
-        <input type="file"  placeholder="Img/" class="form-control shadow @error('temporary_images.*') is-invalid @enderror" id="image" wire:model.live="temporary_images" multiple >
+        <input type="file"  placeholder="Img/" class="form-control shadow @error('temporary_images.*') is-invalid @enderror" id="image" wire:model.live="temporary_images" multiple required >
         @error('temporary_images.*')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
