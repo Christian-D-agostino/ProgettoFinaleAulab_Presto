@@ -31,7 +31,7 @@
                                 @if ($article->images->count() >= 0)
                                     <div id="carouselExampleDark-{{ $article->id }}"
                                         class="carousel carousel-dark slide h-100">
-                                        <div class="carousel-indicators">
+                                        <div class="carousel-indicators d-none">
                                             <button type="button"
                                                 data-bs-target="#carouselExampleDark-{{ $article->id }}"
                                                 data-bs-slide-to="0" class="active" aria-current="true"

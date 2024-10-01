@@ -16,7 +16,7 @@
           <p class="card-text text-white"><small class="text-white">{{ $article->created_at->diffForHumans() }} <br>
             {{__('ui.insertby')}}: {{ $article->user->name }}</small></p>
             <div class="col-12 d-flex justify-content-end align-items-end">
-                <button class="btn btn-custom2 w-50" data-bs-toggle="modal"
+                <button class="btn btn-custom w-50" data-bs-toggle="modal"
                   data-bs-target="#exampleModal-{{ $article->id }}">{{__('ui.seemore')}}</button>
             </div>
         </div>

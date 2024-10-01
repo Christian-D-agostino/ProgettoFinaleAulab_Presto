@@ -1,6 +1,6 @@
 <x-layout>
 
-    <div class="container-fluid pt-5">
+    <div class="container-fluid pt-5 height-custom">
         <div class="row justify-content-center align-items-center py-5 text-center">
             <div class="col-12 pt-5">
                 <h1 class="display-4">{{__('ui.articlescategory')}} <span class="fst-italic fw-bold"> {{ __("ui.$category->name") }}</span></h1>
