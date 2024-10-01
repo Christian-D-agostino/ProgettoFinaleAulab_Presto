@@ -1,4 +1,4 @@
-<div class="card mb-3 card-custom" style="width: 30rem; height: 19.3rem;">
+<div class="card mb-3 card-custom" style="width: 30rem; height: 19.8rem;">
     <div class="row g-0">
       <div class="col-md-4">
         <img src="{{ $article->images->isNotEmpty() ? $article->images->first()->getUrl(300, 300) : 'https://picsum.photos/300' }}" class="img-fluid  rounded-start-1 h-100" alt="...">
