@@ -61,4 +61,5 @@ return [
     'requestrevisor' => 'Apply to work with us',
     'talkaboutyou' => 'Tell us about yourself',
     'sendrequest' => 'Send Request',
+    'lastarticles' => 'Last Articles',
 ];
