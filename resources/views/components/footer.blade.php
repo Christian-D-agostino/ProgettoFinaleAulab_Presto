@@ -5,7 +5,7 @@
                 <use xlink:href="#bootstrap" />
             </svg>
         </a>
-        <span class="mb-3 mb-md-0 text-white">&copy; 2024 Company, Inc</span>
+        <span class="mb-3 mb-md-0 text-white">&copy; 2024 Markettaro, Industries</span>
     </div>
 
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex me-5">

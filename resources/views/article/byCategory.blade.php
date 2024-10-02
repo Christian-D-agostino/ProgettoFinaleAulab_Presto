@@ -7,7 +7,7 @@
             </div>
         </div>
 
-        <div class="row justify-content-center align-items-center pb-4 text-center">
+        <div class="row justify-content-center align-items-center  pb-4 text-center">
             @forelse ($articles as $article)
                 <div class="col-12 col-md-3 d-flex justify-content-center  mb-2">
                     <x-card :article="$article"/>

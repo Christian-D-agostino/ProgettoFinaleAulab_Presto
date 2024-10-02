@@ -4,23 +4,23 @@
         <div>
 
             <div class="row vh-100 justify-content-center HeaderBackground">
-                @if (session('error'))
-                    <div class="alert alert-success">
-                        {{ session('error') }}
-                    </div>
-                @endif
-                @if (session('success'))
-                    <div class="alert alert-success">
-                        {{ session('success') }}
-                    </div>
-                @endif
-
+                
                 <div
-                    class="col-11 col-md-8 d-flex flex-md-column align-items-center align-items-md-start justify-content-center">
-
-                    <div class="mb-5 pb-5">
-                        <h2 class="text-center p-2">{{__('ui.sellnow')}} </h2>
-                        <p class="fs-5 text-center text-white p-2">{{__('ui.subtitle')}} </p>
+                class="col-11 col-md-8 d-flex flex-md-column align-items-center align-items-md-start justify-content-center">
+                
+                <div class="mb-5 pb-5">
+                    <h2 class="text-center p-2">{{__('ui.sellnow')}} </h2>
+                    @if (session('error'))
+                        <div class="alert alert-success">
+                            {{ session('error') }}
+                        </div>
+                    @endif
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+                    <p class="fs-5 text-center text-white p-2">{{__('ui.subtitle')}} </p>
 
                         <a href="{{ route('article.create') }}" class="btn btn-custom mb-5">{{__('ui.sell')}} </a>
                     </div>
