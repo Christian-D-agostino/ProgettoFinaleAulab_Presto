@@ -107,7 +107,7 @@
                 </div>
 
                 {{-- RATINGS --}}
-                <div class="col-10 col-md-4">
+                <div class="col-10 col-md-4 mt-5 m-md-0">
                     @foreach ($article_to_check->images as $key => $image)
                         <div id="{{ $image->id . 'image' }}" class="card card5">
                             <div class="card-body">
