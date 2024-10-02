@@ -1,6 +1,6 @@
 <x-layout>
     <div class="container mt-5 height-custom">
-        <div class="row justify-content-center pt-5">
+        <div class="row justify-content-center pt-5 bg-form">
             <div class="col-12 text-center pt-5 pb-4">
                 <h1 class="display-4">{{__('ui.login')}}</h1>
             </div>
@@ -17,10 +17,10 @@
                             </div>
                             <input type="email" class="form-control @error('email') is-invalid @enderror"
                                 id="loginEmail" name="email">
+                            </div>
                             @error('email')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
-                        </div>
                     </div>
 
                     <div class="mb-3">
@@ -31,10 +31,10 @@
                             </div>
                             <input type="password" class="form-control @error('password') is-invalid @enderror"
                                 id="password" name="password">
+                            </div>
                             @error('password')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
-                        </div>
                     </div>
 
                     <div class="d-flex justify-content-center">

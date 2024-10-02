@@ -20,10 +20,10 @@
                             </div>
                             <input type="text" class="form-control @error('name') is-invalid @enderror"
                                 id="name" name="name">
+                            </div>
                             @error('name')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
-                        </div>
                     </div>
 
                     <div class="mb-3">
@@ -34,10 +34,10 @@
                             </div>
                             <input type="email" class="form-control @error('email') is-invalid @enderror"
                                 id="registerEmail" name="email">
+                            </div>
                             @error('email')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
-                        </div>
                     </div>
 
                     <div class="mb-3">
@@ -48,10 +48,10 @@
                             </div>
                             <input type="password" class="form-control @error('password') is-invalid @enderror"
                                 id="password" name="password">
+                            </div>
                             @error('password')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
-                        </div>
                     </div>
 
                     <div class="mb-3">

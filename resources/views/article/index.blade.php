@@ -1,6 +1,6 @@
 <x-layout>
 
-    <div class="container-fluid pt-5">
+    <div class="container-fluid pt-5 height-custom">
         
         <div class="row  justify-content-center align-items-center text-center pt-5">
             <div class="col-12">
