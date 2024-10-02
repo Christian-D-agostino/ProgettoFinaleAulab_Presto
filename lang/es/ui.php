@@ -34,7 +34,7 @@ return [
     'noarticlescategory' => 'No hay artículos para esta categoría',
     'insertarticle' => 'Ingresa Tu Artículo',
     'postarticle' => 'Publicar un artículo',
-    'allarticle' => 'Todos Los Artículos',
+    'allarticles' => 'Todos Los Artículos',
     'results' => 'Resultados de la búsqueda',
     'noarticlesresult' => 'No hay artículos que coincidan con su búsqueda',
     'title' => 'Título',

@@ -34,7 +34,7 @@ return [
     'noarticlescategory' => 'There are no articles for this Category',
     'insertarticle' => 'Enter Your Article',
     'postarticle' => 'Publish an Article',
-    'allarticle' => 'All Articles',
+    'allarticles' => 'All Articles',
     'results' => 'Search Results',
     'noarticlesresult' => 'No Articles matching your search',
     'title' => 'Title',
